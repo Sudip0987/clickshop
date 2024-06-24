@@ -1,0 +1,19 @@
+@import url(../Assets/colors.css);
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Align items vertically center */
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    padding: 10px;
+    height: 38px;
+  }
+.top-bar a{
+    text-decoration: underline;
+    color:var(--secondary-text-color) !important;
+
+}
+.top-bar p{
+    margin: 0px;
+}

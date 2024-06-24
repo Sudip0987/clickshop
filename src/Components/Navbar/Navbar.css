@@ -1,3 +1,4 @@
+@import url(../Assets/colors.css);
 .nav-item{
     display: flex;
     align-items: center;
@@ -5,6 +6,15 @@
 .nav-link{
     margin-right: 0.5px;
     white-space: nowrap;
+    color: var(--primary-text-color);
+}
+.nav-link:hover{
+    color: var(--nav-text-hover-color);
+
+}
+::selection {
+    background-color: #b3d4fc; /* Example selection background color */
+    color: #000; /* Example selection text color */
 }
 
 .down-icon{
@@ -12,3 +22,51 @@
     height: auto;
     cursor: pointer;
 }
+.input-group{
+    background-color: #f0f0f0; /* Light background color */
+
+    margin-left: 24px;
+    margin-right: 24px;
+display: flex;
+
+align-items: center;
+    border:none;
+    border-radius: 10px;
+
+}
+input-group.active{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); /* Dark shadow with spread radius 0 */
+   
+
+}
+.search-icon{
+    border: none;
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+}
+
+.form-control{
+    outline: none ;
+    border: none ;
+    box-shadow: none  
+
+}
+.form-control:focus{
+    outline: none ;
+    border: none ;
+    box-shadow: none;
+}
+    
+.nav-line{
+    background-color: var(--nav-line-color);
+    margin:0px;
+    border:none;
+    height:1px;
+}
+
+.nav-cart-icon,.nav-user-icon{
+cursor: pointer;
+}
+

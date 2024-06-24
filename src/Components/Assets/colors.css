@@ -1,0 +1,11 @@
+:root{
+    --primary-color:#000;
+    --secondary-color:#fff;
+
+    --primary-text-color:#000;
+    --secondary-text-color:#fff;
+    
+    --nav-text-hover-color:#333;
+    --top-bar-background-color:#000000;
+    --nav-line-color:#333333;
+}

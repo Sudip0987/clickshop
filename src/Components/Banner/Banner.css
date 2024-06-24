@@ -1,0 +1,8 @@
+@import url(../Assets/colors.css);
+
+.banner{
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 683px;
+    color: var(--secondary-text-color);
+}

@@ -7,6 +7,13 @@ import './Navbar.css'
 import down_icon from '../Assets/down_icon.png'
 
 function Navbar() {
+const[isActive,setIsActive] = useState(false);
+const handleFocus=()=>{
+  setIsActive(true);
+  console.log("textbox is focused:",isActive);
+
+}
+
   const [showDropdown, setShowDropdown] = useState(false);
   const toogleDropDown = () =>{
 
@@ -14,7 +21,9 @@ function Navbar() {
 
   }
   return (
+    
     <div className='container'>
+     
       <nav className="navbar navbar-expand">
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Logo" />
@@ -56,8 +65,8 @@ function Navbar() {
             </li>
           </ul>
           <div className="input-group">
-            <img src={search_icon} alt="Search Icon" className="input-group-text search-icon" />
-            <input type="text" className="form-control" placeholder="Product search.." />
+            <img src={search_icon} alt="Search Icon" className="search-icon" />
+            <input type="text" className="form-control border-0" onFocus={handleFocus} placeholder="Product search.." />
           </div>
           <div className="d-flex align-items-center">
             
@@ -66,6 +75,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      <hr className='nav-line' />
     </div>
   );
 }
