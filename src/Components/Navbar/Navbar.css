@@ -1,0 +1,14 @@
+.nav-item{
+    display: flex;
+    align-items: center;
+}
+.nav-link{
+    margin-right: 0.5px;
+    white-space: nowrap;
+}
+
+.down-icon{
+    width: 16px;
+    height: auto;
+    cursor: pointer;
+}
