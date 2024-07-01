@@ -1,82 +1,43 @@
 import React, { useState } from 'react';
+import { Nav, Navbar as BootNavbar, Container, NavDropdown, Col } from 'react-bootstrap';
 import logo from '../Assets/logo.png';
 import cart_icon from '../Assets/cart_icon.png';
 import user_icon from '../Assets/user_icon.png';
-import search_icon from '../Assets/search_icon.png'
-import './Navbar.css'
-import down_icon from '../Assets/down_icon.png'
+import search_icon from '../Assets/search_icon.png';
+import './Navbar.css';
 
 function Navbar() {
-const[isActive,setIsActive] = useState(false);
-const handleFocus=()=>{
-  setIsActive(true);
-  console.log("textbox is focused:",isActive);
+  const [isActive, setIsActive] = useState(false);
 
-}
+  const handleFocus = () => {
+    setIsActive(true);
+    console.log("textbox is focused:", isActive);
+  };
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const toogleDropDown = () =>{
-
-    setShowDropdown(!showDropdown);
-
-  }
   return (
-    
-    <div className='container'>
-     
-      <nav className="navbar navbar-expand">
-        <a className="navbar-brand" href="#">
-          <img src={logo} alt="Logo" />
-        </a>
+<BootNavbar expand = "lg">
+  <BootNavbar.Brand>
+    <img src= {logo} alt='click shop logo'/>
+  </BootNavbar.Brand>
+  <BootNavbar.Toggle/>
+  <BootNavbar.Collapse className = "right-aligned">
+  <Nav>
+  <NavDropdown title="Shop"   id="basic-nav-dropdown">
+              <NavDropdown.Item href="#Men">Men</NavDropdown.Item>
+              <NavDropdown.Item href="#Women">Women</NavDropdown.Item>
+              <NavDropdown.Item href="#Kids">Kids</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#home">New Arrivals</Nav.Link>
+            <Nav.Link href="#home">On Sale</Nav.Link>
+            <Nav.Link href="#home">Brands</Nav.Link>
+           
+  </Nav>
+  </BootNavbar.Collapse>
 
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mr-auto">
-          <li className="nav-item">
-  <a className="nav-link" href="#">Shop</a>
-  <img className="down-icon" src={down_icon} alt="Dropdown Icon" onClick={toogleDropDown} />
-    
-        {showDropdown &&(
-          
-          <ul className='dropdown-menu'>
-      <li className='nav-item'>
-        <a href='#' className='nav-link'>Men</a>
-        </li>
-        <li className='nav-item'>
-        <a href='#' className='nav-link'>Women</a>
-        </li>
-        <li className='nav-item'>
-        <a href='#' className='nav-link'>Kids</a>
-        </li>
-        </ul>
-        )}
-    
-</li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">On Sale</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">New Arrivals</a>
-            </li>            <li className="nav-item">
-              <a className="nav-link" href="#">Brands</a>
-            </li>
-          </ul>
-          <div className="input-group">
-            <img src={search_icon} alt="Search Icon" className="search-icon" />
-            <input type="text" className="form-control border-0" onFocus={handleFocus} placeholder="Product search.." />
-          </div>
-          <div className="d-flex align-items-center">
-            
-            <img src={cart_icon} alt="Cart Icon" className="nav-cart-icon ms-3" />
-            <img src={user_icon} alt="User Icon" className="nav-user-icon ms-3" />
-          </div>
-        </div>
-      </nav>
-      <hr className='nav-line' />
-    </div>
+  
+</BootNavbar>
+
   );
 }
 

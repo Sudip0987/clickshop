@@ -6,3 +6,11 @@
     height: 683px;
     color: var(--secondary-text-color);
 }
+.navbar{
+display: flex;
+flex-direction: row;
+}
+.nav-nav{
+    display: flex;
+    flex-direction: row;
+}
